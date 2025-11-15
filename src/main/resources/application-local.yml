@@ -3,7 +3,12 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://root:${mongo.password}@localhost:27017/products?authSource=admin
+#      uri: mongodb://root:${mongo.password}@localhost:27017/products?authSource=admin
+      uri: mongodb://root:${mongo.password}@192.168.1.93:27017/products?authSource=admin
+  security:
+    user:
+      name: root
+      password: root
 api:
   posts:
     url: "https://jsonplaceholder.typicode.com/posts"

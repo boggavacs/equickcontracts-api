@@ -25,6 +25,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
@@ -32,8 +33,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation("org.slf4j:slf4j-api:2.0.13")
+//	implementation("ch.qos.logback:logback-classic:1.5.6")
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
