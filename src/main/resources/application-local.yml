@@ -9,6 +9,9 @@ spring:
     user:
       name: root
       password: root
+jwt:
+  secret: e85f62fccc85142cbc2a015dc37272cb582fc73e515cefb10c21ebf8c39b8770
+  expiration: 3600
 api:
   posts:
     url: "https://jsonplaceholder.typicode.com/posts"

@@ -1,6 +1,5 @@
 package com.circleback.portfolio.controller;
 
-import com.circleback.portfolio.entity.UserEntity;
 import com.circleback.portfolio.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +16,8 @@ public class Users {
     private final UserService userService;
 
     @PostMapping("/user")
-    public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity userEntity){
-        UserEntity newUserEntity = userService.createUser(userEntity);
-        return ResponseEntity.ok(newUserEntity);
+    public ResponseEntity<com.circleback.portfolio.entity.Users> createUser(@RequestBody com.circleback.portfolio.entity.Users users){
+        com.circleback.portfolio.entity.Users newUsers = userService.createUser(users);
+        return ResponseEntity.ok(newUsers);
     }
 }

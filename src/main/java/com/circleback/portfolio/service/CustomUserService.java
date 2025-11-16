@@ -1,7 +1,6 @@
 package com.circleback.portfolio.service;
 
-import com.circleback.portfolio.Repository.UsersRepository;
-import com.circleback.portfolio.entity.UserEntity;
+import com.circleback.portfolio.entity.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +16,7 @@ public class CustomUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserEntity user = userService.findByEmail(email);
+        Users user = userService.findByEmail(email);
         if (user == null) {
             throw new UsernameNotFoundException("User not found with email: " + email);
         }
