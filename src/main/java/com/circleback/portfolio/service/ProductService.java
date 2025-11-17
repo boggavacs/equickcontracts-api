@@ -19,7 +19,6 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final ProductRepositoryImpl productRepositoryImpl;
 
-
     public List<Product> addProductDetails(Product product){
         productRepository.save(product);
         return getProductByName(product.getName());

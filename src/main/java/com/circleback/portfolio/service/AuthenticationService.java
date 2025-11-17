@@ -31,7 +31,8 @@ public class AuthenticationService {
                 .address1(request.getAddress1())
                 .address2(request.getAddress2())
                 .zip(request.getZip())
-                .role(Role.USER)
+//                .role(Role.USER)
+                .role(request.getRole())
                 .build();
         usersRepository.save(user);
         var jwtToken = jwtService.generateToken(user);

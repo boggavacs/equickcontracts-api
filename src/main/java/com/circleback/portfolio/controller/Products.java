@@ -3,6 +3,7 @@ package com.circleback.portfolio.controller;
 import com.circleback.portfolio.entity.Product;
 import com.circleback.portfolio.service.ProductService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/v1")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Products {
 
     private ProductService productService;

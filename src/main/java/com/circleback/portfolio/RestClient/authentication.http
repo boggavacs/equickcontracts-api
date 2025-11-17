@@ -1,0 +1,24 @@
+
+### Create New User
+POST http://localhost:8081/v1/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@test.com",
+  "password": "password123",
+  "address1": "123 Main St",
+  "address2": "Apt 4B",
+  "zip": "12345",
+  "role": "USER"
+}
+
+### Get User token
+POST http://localhost:8081/v1/auth/authenticate
+Content-Type: application/json
+
+{
+  "email": "John.corne1@circleback.com"
+    "password": "root"
+}
