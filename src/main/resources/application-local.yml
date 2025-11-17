@@ -1,0 +1,17 @@
+server:
+  port: 8081 # Change 8081 to your desired port number
+spring:
+  data:
+    mongodb:
+#      uri: mongodb://root:${mongo.password}@localhost:27017/products?authSource=admin
+      uri: mongodb://root:${mongo.password}@192.168.1.93:27017/products?authSource=admin
+  security:
+    user:
+      name: root
+      password: root
+jwt:
+  secret: e85f62fccc85142cbc2a015dc37272cb582fc73e515cefb10c21ebf8c39b8770
+  expiration: 3600
+api:
+  posts:
+    url: "https://jsonplaceholder.typicode.com/posts"
