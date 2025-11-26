@@ -108,6 +108,10 @@ public class Users implements UserDetails {
     private int age;
     private String address1;
     private String address2;
+    private String city;
+    private String state;
+    private String country;
+    private String phone;
     private String zip;
 
     // Ensure unique email with proper collation
@@ -151,5 +155,11 @@ public class Users implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Data
+    @Builder
+    public static class userResponse{
+        private String message;
     }
 }

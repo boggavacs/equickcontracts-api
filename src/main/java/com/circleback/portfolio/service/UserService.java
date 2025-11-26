@@ -19,6 +19,9 @@ public class UserService {
     public Users createUser(Users users){
         log.info("ADDING NEW USER {}", users.toString());
         try {
+
+            Users user = usersRepository.findByEmail(users.getEmail()).orElse(null);
+
             Users newUsers = Users.builder()
                     .firstName(users.getFirstName())
                     .lastName(users.getLastName())
@@ -27,8 +30,12 @@ public class UserService {
                     .password(passwordEncoder.encode(users.getPassword()))
                     .address1(users.getAddress1())
                     .address2(users.getAddress2())
+                    .city(users.getCity())
+                    .state(users.getState())
+                    .country(users.getCountry())
                     .role(users.getRole())
                     .zip(users.getZip())
+                    .phone(users.getPhone())
                     .build();
             log.debug("USER SUCCESSFULLY SAVED WITH USER ID {}", users.getId());
             return usersRepository.save(newUsers);
